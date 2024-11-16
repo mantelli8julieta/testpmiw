@@ -17,7 +17,7 @@ class Ingredientes {
     this.mostrar();
     this.caer();
     this.reiniciarUbi();
-    this.colisionJugador();
+   this.colisionJugador();
   }
 
   mostrar() {
@@ -38,10 +38,10 @@ class Ingredientes {
     }
   }
 
-  colisionJugador(xJugador) {
-    if (dist(this.posX, this.posY, xJugador, 400) < this.tamImg ) {
+  colisionJugador(xJugador, yJugador, tamImg) {
+    if (dist(this.posX, this.posY, xJugador, yJugador) < this.tamImg / 2 + 25) {
       this.reiniciarUbi();
-      this.puntaje += 1;
+      juego.puntaje += 1;
     }
   }
 }

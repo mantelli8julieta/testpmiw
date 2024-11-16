@@ -1,7 +1,7 @@
 class Jugador {
-  constructor(xJugador, posY) {
+  constructor(xJugador, yJugador) {
     this.posX = xJugador;
-    this.posY = posY;
+    this.posY = yJugador;
     this.vel = 5;
     this.tamImg = 80;
   }
@@ -13,10 +13,9 @@ class Jugador {
 
   mostrar() {
     image(jugadorImg, this.posX, this.posY, this.tamImg, this.tamImg);
-    
   }
-  
-    mover(){
-      this.posX = constrain(mouseX, 0, 480);
-    }
+
+  mover() {
+    this.posX = constrain(mouseX, 0, width - this.tamImg);
+  }
 }

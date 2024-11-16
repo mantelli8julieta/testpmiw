@@ -20,6 +20,5 @@ function draw() {
   background(250);
   image(fondo, 0, 0, 640, 480);
   juego.actualizar();
-  
   print(this.puntaje);
 }
