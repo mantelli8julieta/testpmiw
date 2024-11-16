@@ -1,9 +1,9 @@
 class Juego {
-  constructor() {
+  constructor(xJugador) {
     this.temporizador = 0;
     this.puntaje = 0;
     //this.boton = new Boton();
-    this.jugador = new Jugador(100, 400);
+    this.jugador = new Jugador(xJugador, 400);
     this.cantIngredientes = 5;
 
     this.ingredientes = [];
@@ -11,7 +11,13 @@ class Juego {
 
     for (let i =0; i < this.cantIngredientes; i++) {
       this.ingredientes.push(new Ingredientes());
+      
+      this.mostrarPuntaje();
     }
+  }
+
+  mostrarPuntaje() {
+    text("PUNTOS: " + this.puntaje, 10, 10);
   }
 
   actualizar() {

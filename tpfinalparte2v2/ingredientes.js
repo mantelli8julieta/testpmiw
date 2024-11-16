@@ -5,11 +5,11 @@ class Ingredientes {
     this.velCaida = 3;
     this.tipo = int(random(0, 3));
     this.valor = 3;
-    
-    this.imgIngredientes = imgIngredientes[this.tipo];
-    
-    this.reiniciarUbi();
 
+    this.imgIngredientes = imgIngredientes[this.tipo];
+
+
+    this.actualizar();
     //ciclo for para carga de imágenes
   }
 
@@ -17,6 +17,7 @@ class Ingredientes {
     this.mostrar();
     this.caer();
     this.reiniciarUbi();
+    this.colisionJugador();
   }
 
   mostrar() {
@@ -34,6 +35,13 @@ class Ingredientes {
     if (this.posY > height) {
       this.posX = random(width);
       this.posY = random(-300, -900);
+    }
+  }
+
+  colisionJugador(xJugador) {
+    if (dist(this.posX, this.posY, xJugador, 400) < this.tamImg ) {
+      this.reiniciarUbi();
+      this.puntaje += 1;
     }
   }
 }
